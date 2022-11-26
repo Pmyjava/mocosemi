@@ -64,6 +64,7 @@ public class BoardController {
 		PageInfo pi = Pagination.getPageInfo(currentPage, listCount, 10);
 		
 		ArrayList<Board> list = bService.selectBoardList(pi, "qNa");
+		String name;
 
 		if(list != null) {
 			model.addAttribute("pi",pi);

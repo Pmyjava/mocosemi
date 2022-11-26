@@ -1,0 +1,21 @@
+//package com.kh.moco.member.model.service;
+//
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//
+//import org.mybatis.spring.SqlSessionTemplate;
+//import org.springframework.beans.factory.annotation.Autowired;
+//
+//import com.kh.moco.member.model.dao.MemberDAO;
+//import com.kh.moco.member.model.vo.Member;
+//
+//public class MemberServicelmpl {
+//	@Autowired
+//	private MemberDAO mDAO;
+//	
+//	@Autowired
+//	private SqlSessionTemplate sqlSession;
+//	
+//
+//
+//}

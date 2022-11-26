@@ -1,0 +1,96 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        .logo{text-align: center; margin-top: 50px;}
+        .login{width: 500px; height: 30px; background-color: rgba(212, 216, 224, 0.925); border: none;
+                border-radius: 5px; }
+        #member{border-collapse: separate; border-spacing: 0 5px;}
+        #enrollBtn{width: 505px; height: 32px; background-color: #0c70f2; border: none;
+                border-radius: 5px; color: white; font-size: 17px;} 
+
+        #social{text-align: center; border-collapse: separate; border-spacing: 0 30px;}
+        #social td{width: 160px;}
+        .socialBtn{width: 140px; height: 50px;}
+    </style>
+
+</head>
+<body>
+    <div class="logo">
+        <img src="resources/assets/moco.png" width="250px">
+    </div>
+    <table style="margin: auto;" id="member">
+        <tr>
+            <td><label for="userId">* 아이디</label>
+                <div></div>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" class="login" name="userId" id="userId" required></td>
+        </tr>
+        <tr>
+            <td><label for="userPwd">* 비밀번호</label></td>
+        </tr>
+        <tr>
+            <td><input type="password" class="login" name="userPwd" id="userPwd" required></td>
+        </tr>
+        <tr>
+            <td><label for="userPwd2">* 비밀번호 확인</label><br>
+            <div></div></td>
+        </tr>
+        <tr>
+            <td><input type="password" class="login" name="userPwd2" id="userPwd2" required></td>
+        </tr>
+        <tr>
+            <td><label for="userName">* 이름</label><br></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="login" name="userName" id="userName" required></td>
+        </tr>
+        <tr>
+            <td><label for="nickName">* 닉네임</label><br></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="login" name="nickName" id="nickName" required></td>
+        </tr>
+        <tr>
+            <td><label for="birthDay">생년월일</label><br></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="login" name="birthDay1" id="birthDay1" style="width: 160px;">
+                <input type="text" class="login" name="birthDay2" id="birthDay2" style="width: 160px;">
+                <input type="text" class="login" name="birthDay3" id="birthDay3" style="width: 160px;">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">이메일</label><br></td>
+        </tr>
+        <tr>
+            <td><input type="email" class="login" name="email" id="email"><br><br></td>
+        </tr>
+        <tr>
+            <td><button type="submit" id="enrollBtn">회원가입</button></td>
+        </tr>
+
+    </table>
+
+    <table style="margin: auto;" id="social">
+        <tr>
+            <td><hr></td>
+            <td>소셜 회원가입</td>
+            <td><hr></td>
+        </tr>
+        <tr>
+            <td><button class="socialBtn">KAKAO</button></td>
+            <td><button class="socialBtn">NAVER</button></td>
+            <td><button class="socialBtn">GOOGLE</button></td>
+        </tr>
+    </table>
+</body>
+</html>

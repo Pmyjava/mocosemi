@@ -1,0 +1,43 @@
+package com.kh.moco.board.dao;
+
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.RowBounds;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+@Repository("bDAO")
+public class BoardDAO {
+
+	public int getListCount(SqlSessionTemplate sqlSession, int i) {
+		
+		return sqlSession.selectOne("boardMapper.getListCount",i);
+	}
+	public ArrayList<Board> selectBoardList(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardList", i, rowBounds);
+	}
+	public ArrayList<Board> selectBoardListQNA(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardListQNA", i, rowBounds);
+	}
+	public ArrayList<Board> selectBoardListReview(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardListReview", i, rowBounds);
+	}
+	public ArrayList<Board> selectBoardListUnknown(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardList4", i, rowBounds);
+	}
+}

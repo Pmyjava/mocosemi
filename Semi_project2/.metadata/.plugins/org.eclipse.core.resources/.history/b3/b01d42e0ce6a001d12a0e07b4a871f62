@@ -1,0 +1,53 @@
+package com.kh.moco.board.model.service;
+
+import java.util.ArrayList;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kh.moco.board.dao.BoardDAO;
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+
+
+@Service("bService")
+public class BoardServiceImpl implements BoardService{
+	
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	@Autowired
+	private BoardDAO bDAO;
+	
+	@Override
+	public int getListCount(int i) {
+		return bDAO.getListCount(sqlSession, i);
+	}
+
+	@Override
+	public ArrayList<Board> selectBoardList(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+	
+	@Override
+	public ArrayList<Board> selectBoardList2(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+	
+	@Override
+	public ArrayList<Board> selectBoardList3(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+	
+	@Override
+	public ArrayList<Board> selectBoardList4(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+
+}

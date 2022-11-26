@@ -1,0 +1,17 @@
+package com.kh.moco.board;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class BoardController {
+	
+	private BoardService bService;
+	
+	@RequestMapping(value = "boardList.bo", method = RequestMethod.GET)
+    public String boardList() {
+		//return "member/login";
+		return "boardList";
+	}
+}

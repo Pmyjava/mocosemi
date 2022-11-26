@@ -1,0 +1,5 @@
+package com.kh.moco.board.common;
+
+public class Pagination {
+
+}

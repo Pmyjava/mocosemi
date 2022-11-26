@@ -1,0 +1,5 @@
+package com.kh.moco.board;
+
+public class BoardController {
+
+}

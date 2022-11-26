@@ -1,0 +1,7 @@
+package com.kh.moco.board.model.service;
+
+public interface BoardService {
+
+	int getListCount(int i);
+
+}

@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 수정, 삭제</title>
+    <style>
+        .writer{margin: auto; text-align: center;}
+        #writerTable {margin: auto;}
+        #writerTable th{text-align: left; height: 50px;}
+        input{background-color: rgba(212, 216, 224, 0.925); border-radius: 5px; width: 100%;
+                height: 30px; border: none;}
+        #category{width: 100%; text-align: left; background-color: rgba(212, 216, 224, 0.925); 
+                    height: 30px; border: none; border-radius: 5px;}
+        #unknown{width: 20px; text-align: center; margin-bottom: 5px; font-size: 50px;}
+        #content{background-color: rgba(212, 216, 224, 0.925); width: 700px; height: 500px;
+                border-radius: 5px;}
+        #unknowB{text-align: center;}
+        button{border: none; border-radius: 5px; height: 30px; width: 150px; background-color: rgba(149, 156, 171, 0.925);}
+        .header{border: 1px solid black;}
+        .foot{border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <br><br><br><br><br><br>
+    </div>
+    <br><br><br><br>
+    <div class="writer">
+        <table id="writerTable">
+            <tr>
+                <th>제목</th>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="text" id="title"></td>
+            </tr>
+            <tr>
+                <th>카테고리</th>
+            </tr>
+            <tr>
+                <td>
+                    <select id="category">
+                        <option value="free" selected>자유 게시판</option>
+                        <option value="free" selected>후기 게시판</option>
+                        <option value="free" selected>정보 게시판</option>
+                    </select>
+                </td>
+                <td style="text-align: right; padding-right: 10px; width: 50px;">
+                    <input type="checkbox" id="unknown">
+                </td>
+                <td style="text-align: left; width: 50px; padding-right: 20px; font-size: 15px;">
+                    &nbsp;&nbsp;익명
+                </td>
+            </tr>
+            <tr>
+                <th>내용</th>
+            </tr>
+            <tr>
+                <td colspan="3"><p id="content"></p></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button type="button" id="update">수정하기</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" id="delete">삭제하기</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br><br><br>
+    <footer class="foot">
+        <br><br><br><br>
+    </footer>
+</body>
+</html>

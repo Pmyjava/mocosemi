@@ -1,0 +1,19 @@
+package com.kh.moco.board.model.service;
+
+import java.util.ArrayList;
+
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+public interface BoardService {
+
+	int getListCount(String i);
+
+	ArrayList<Board> selectBoardList(PageInfo pi, String i);
+
+	int getListCountSearch(String keyword, String content);
+
+	ArrayList<Board> selectBoardListSearch(PageInfo pi, String keyword, String content);
+
+	
+}

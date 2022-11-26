@@ -1,0 +1,110 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모코 메인페이지</title>
+    <link rel="stylesheet" href="resources/css/style.css?after">
+</head>
+<body>
+    <header>
+    	<jsp:include page="/WEB-INF/views/main/nav.jsp"/>
+    </header>	
+<hr>
+  <!-- 배너 -->
+    <div class = "container2">
+       <div class="main-view">
+          <ul>
+            <li><img src="resources/assets/banner1.jpg" width="100%" /></li>
+            <li><img src="resources/assets/banner2.jpg" width="100%"/></li>
+            <li><img src="resources/assets/banner3.jpg" width="100%"/></li>
+          </ul>
+        </div>
+     </div>
+  <!-- 정보 게시판 -->
+  <h3 style="text-align: center">정보 게시판</h3>
+  <div class="infocenter">
+	  <div class="infodisplay" id= "area1">
+	  		<div class="infotop">쌍용 교육센터</div>
+	  		<div class="infomiddle">
+	  			<img src="resources/assets/moco.png">
+	  		</div>
+	  		<div class="infobottom">
+				<ul>
+					<li> 일시 : 2022.12.26~2023.07.18</li>
+					<li> 과정명 : Aws클라우드를 활용한 
+					Full-stack개발자 양성</li>
+				</ul>
+	  		</div>
+	  </div>
+	  <div class="infodisplay" id= "area2">
+	  		<div class="infotop">쌍용 교육센터</div>
+	  		<div class="infomiddle">
+	  			<img src="resources/assets/moco.png">
+	  		</div>
+	  		<div class="infobottom">
+				<ul>
+					<li> 일시 : 2022.12.26~2023.07.18</li>
+					<li> 과정명 : Aws클라우드를 활용한 
+					Full-stack개발자 양성</li>
+				</ul>
+	  		</div>
+	  </div>
+	  <div class="infodisplay" id= "area3">
+	  		<div class="infotop">쌍용 교육센터</div>
+	  		<div class="infomiddle">
+	  			<img src="resources/assets/moco.png">
+	  		</div>
+	  		<div class="infobottom">
+				<ul>
+					<li> 일시 : 2022.12.26~2023.07.18</li>
+					<li> 과정명 : Aws클라우드를 활용한 
+					Full-stack개발자 양성</li>
+				</ul>
+	  		</div>
+	  </div>
+	  <div class="infodisplay" id= "area4">
+	  		<div class="infotop">쌍용 교육센터</div>
+	  		<div class="infomiddle">
+	  			<img src="resources/assets/moco.png">
+	  		</div>
+	  		<div class="infobottom">
+				<ul>
+					<li> 일시 : 2022.12.26~2023.07.18</li>
+					<li> 과정명 : Aws클라우드를 활용한 
+					Full-stack개발자 양성</li>
+				</ul>
+	  		</div>
+	  </div>
+	  <div class="infodisplay" id= "area5">
+	  		<div class="infotop">쌍용 교육센터</div>
+	  		<div class="infomiddle">
+	  			<img src="resources/assets/moco.png">
+	  		</div>
+	  		<div class="infobottom">
+				<ul>
+					<li> 일시 : 2022.12.26~2023.07.18</li>
+					<li> 과정명 : Aws클라우드를 활용한 
+					Full-stack개발자 양성</li>
+				</ul>
+	  		</div>
+	  </div>
+</div>
+  	
+<hr>
+  <!-- 자유게시판 -->
+<h3 style="text-align: center">자유 게시판</h3>
+  <div class="freecenter">
+	<div class="freedisplay" id="area6"></div>
+    <div class="freedisplay" id="area6"></div>
+    <div class="freedisplay" id="area6"></div>
+  </div>
+<hr>
+<footer>
+	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
+</body>
+</html>

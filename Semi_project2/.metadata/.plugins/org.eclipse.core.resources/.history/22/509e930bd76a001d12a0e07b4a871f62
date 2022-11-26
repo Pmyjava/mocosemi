@@ -1,0 +1,68 @@
+package com.kh.moco.board.model.service;
+
+import java.util.ArrayList;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kh.moco.board.dao.BoardDAO;
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+
+
+@Service("bService")
+public class BoardServiceImpl implements BoardService{
+	
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	@Autowired
+	private BoardDAO bDAO;
+	
+	@Override
+	public int getListCount(int i) {
+		return bDAO.getListCount(sqlSession, i);
+	}
+
+	@Override
+	public ArrayList<Board> selectBoardList(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+	
+	@Override
+	public int getListCountQNA(int i) {
+		return bDAO.getListCount(sqlSession, i);
+	}
+
+	@Override
+	public ArrayList<Board> selectBoardListQNA(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+	
+	@Override
+	public int getListCountReview(int i) {
+		return bDAO.getListCount(sqlSession, i);
+	}
+
+	@Override
+	public ArrayList<Board> selectBoardListReview(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+	
+	@Override
+	public int getListCountUnKnown(int i) {
+		return bDAO.getListCount(sqlSession, i);
+	}
+
+	@Override
+	public ArrayList<Board> selectBoardListUnKnown(PageInfo pi, int i) {
+		// TODO Auto-generated method stub
+		return bDAO.selectBoardList(sqlSession, pi, i);
+	}
+
+}

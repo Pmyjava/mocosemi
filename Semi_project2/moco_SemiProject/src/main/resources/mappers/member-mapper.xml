@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+	
+	<insert id="insertMember">
+		insert into member
+		values(member_seq.nextval, #{memberId}, #{memberPwd}, #{memberName}, #{memberNickName},
+			 #{memberEmail}, sysdate, default, default)
+	</insert>
+	
+	<select id="login" resultMap="loginResultMap">
+		select * 
+		from member 
+		where member_id=#{memberId} and member_status='Y'
+	</select>
+	
+	<resultMap type="Member" id="loginResultMap">
+		<id column="MEMBER_NUM" property="memberNum"/>
+		<result column="MEMBER_ID" property="memberId"/>
+		<result column="MEMBER_PWD" property="memberPwd"/>
+		<result column="MEMBER_NAME" property="memberName"/>
+		<result column="MEMBER_NICKNAME" property="memberNickName"/>
+		<result column="MEMBER_EMAIL" property="memberEmail"/>
+		<result column="MEMBER_ENROLL_DATE" property="memberEnrollDate"/>
+		<result column="MEMBER_ISADMIN" property="memberIsAdmin"/>
+		<result column="MEMBER_STATUS" property="memberStatus"/>
+	</resultMap>
+	
+	<select id="checkId" resultType="_int">
+		select count(*)
+		from member
+		where member_id = #{id}
+	</select>
+	
+	<select id="checkNickName" resultType="_int">
+		select count(*)
+		from member
+		where member_nickname=#{nickName}
+	</select>
+</mapper>

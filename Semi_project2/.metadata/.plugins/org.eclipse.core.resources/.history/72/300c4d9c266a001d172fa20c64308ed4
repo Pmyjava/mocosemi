@@ -1,0 +1,5 @@
+package com.kh.moco.board.model.service.dao;
+
+public class BoardDAO {
+
+}

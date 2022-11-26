@@ -1,0 +1,13 @@
+package com.kh.moco.member.model.service;
+
+import org.springframework.stereotype.Service;
+
+import com.kh.moco.member.model.vo.Member;
+
+@Service
+public interface MemberService {
+	Member login(Member m);
+
+	int insertMember(Member m);
+
+}

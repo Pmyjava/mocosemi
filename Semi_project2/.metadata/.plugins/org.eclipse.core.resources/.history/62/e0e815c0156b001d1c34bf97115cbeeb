@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boardMapper">
+
+  	<select id="getListCount" resultType="_int">
+  		select count(*)
+  		from board
+  		where board_status='Y' and board_report = 'N' and board_Type = 1 and board_CATEGORY  = #{i}
+  	</select>
+  	<select id="selectBoardList" resultMap="boardResultSet">
+		select * from board join member using(member_num)
+        where board_status = 'Y' and board_report = 'N' and board_Type = 1 and board_CATEGORY  = #{i}
+    	order by board_num desc
+	</select>
+
+	<resultMap type="Board" id="boardResultSet">
+		<id column="BOARD_NUM" property="boardNum"/>
+		<result column="BOARD_TITLE" property="boardTitle"/>
+		<result column="BOARD_CONTENT" property="boardContent"/>
+		<result column="BOARD_VIEW" property="boardView"/>
+		<result column="BOARD_CREATE_DATE" property="boardCreateDate"/>
+		<result column="BOARD_MODIFY_DATE" property="boardModifyDate"/>
+		<result column="BOARD_ANONYMITY" property="boardAnonymity"/>
+		<result column="BOARD_CATEGORY" property="boardCategory"/>
+		<result column="BOARD_STATUS" property="boardStatus"/>
+		<result column="BOARD_REPORT" property="boardReport"/>
+		<result column="BOARD_TYPE" property="boardType"/>
+		<result column="MEMBER_NUM" property="memberNum"/>
+		<result column="MEMBER_nickName" property="nickName"/>
+	</resultMap>
+	
+	<select id="selectSearchListCount" parameterType="map" resultType="_int">
+		select count(*)
+		from board
+			join member on(board_writer = user_id)
+		where board.status= 'Y'
+		<if test="condition == 'writer'">
+			and nickName = #{ value }
+		</if>
+		<if test="condition == 'title'">
+			and board_title like '%' || #{value} || '%'
+		</if>
+		<if test="condition == 'content'">
+			and board_content like '%' || #{value} || '%'
+		</if>
+	</select>
+	<select id="selectSearchList" parameterType="hashmap" resultMap="boardResultSet">
+		select *
+		from board
+			join member on(board_writer = user_id)
+		where board.status='Y'
+		<choose>
+			<when test="condition == 'writer'">
+				and nickname = #{value}
+			</when>
+			<when test="condition == 'title'">
+				and board_title like '%' || #{value} || '%'
+			</when>
+			<otherwise>
+				and board_content like '%' || #{value} || '%'
+			</otherwise>
+		</choose>
+		order by board_id desc
+		
+	</select>
+
+</mapper>
+

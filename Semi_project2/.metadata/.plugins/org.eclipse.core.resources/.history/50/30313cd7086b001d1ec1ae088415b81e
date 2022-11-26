@@ -1,0 +1,33 @@
+package com.kh.moco.board.model.service;
+
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+public interface BoardService {
+
+	int getListCount(String i);
+
+	ArrayList<Board> selectBoardList(PageInfo pi, String i);
+
+	public int getSearchListCount(HashMap<String, String> map) throws BoardException {
+		SqlSession session = getSqlSession();
+		
+		int listCount = new BoardDAO().getSearchListCount(session, map);
+		
+		session.close();
+		return listCount;
+	}
+
+	public ArrayList<Board> selectSearchList(HashMap<String, String> map, PageInfo pi) throws BoardException {
+		SqlSession session = getSqlSession();
+		
+		ArrayList<Board> list = new BoardDAO().getSearchList(session, map, pi);
+		
+		session.close();
+		return list;
+	}
+}

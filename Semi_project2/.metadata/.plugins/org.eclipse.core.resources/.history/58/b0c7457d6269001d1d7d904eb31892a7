@@ -1,0 +1,15 @@
+package com.kh.moco.member.model.vo;
+
+public class Member {
+	
+	private int num;
+	private String Id;
+	private String Pwd;
+	private String Name;
+	private String Nickname;
+	private int Birthday;
+	private String Email;
+	private String IsAdmin;
+	private String Status;
+
+}

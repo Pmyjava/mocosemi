@@ -1,0 +1,24 @@
+package com.kh.moco.member.model.vo;
+
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+
+public class Member {
+	
+	private int num;
+	private String Id;
+	private String Pwd;
+	private String Name;
+	private String Nickname;
+	private int Birthday;
+	private String Email;
+	private String IsAdmin;
+	private String Status;
+
+}

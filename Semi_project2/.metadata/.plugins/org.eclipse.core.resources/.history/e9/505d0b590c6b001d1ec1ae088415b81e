@@ -1,0 +1,51 @@
+package com.kh.moco.board.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.ibatis.session.RowBounds;
+import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.kh.moco.board.model.exception.BoardException;
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+@Repository("bDAO")
+public class BoardDAO {
+
+	public int getListCount(SqlSessionTemplate sqlSession, String i) {
+		
+		return sqlSession.selectOne("boardMapper.getListCount",i);
+	}
+	public ArrayList<Board> selectBoardList(SqlSessionTemplate sqlSession, PageInfo pi, String i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardList", i, rowBounds);
+	}
+	
+	public int getSearchListCount(SqlSession session, HashMap<String, String> map) throws BoardException {
+		int listCount = session.selectOne("boardMapper.selectSearchListCount",map);
+		
+		if(listCount <=0) {
+			session.close();
+			throw new BoardException("검색된 게시물이 없습니다.");
+		}
+		return listCount;
+	}
+
+	public ArrayList<Board> getSearchList(SqlSession session, HashMap<String, String> map, PageInfo pi) throws BoardException {
+		int offset = (pi.getCurrentPage()-1)*pi.getBoardLimit();
+		
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());		
+		
+		ArrayList<Board> list = (ArrayList)session.selectList("boardMapper.selectSearchList",map,rowBounds);
+		if(list == null) {
+			session.close();
+			throw new BoardException("검색된 게시글이 없습니다.");
+		}
+		return list;
+	}
+}

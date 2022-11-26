@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.kh.moco.member.model.vo.Member" alias="Member"/>
+		<typeAlias type="com.kh.moco.board.model.vo.Board" alias="Board"/>
+		<typeAlias type="com.kh.moco.attachment.model.vo.Attachment" alias="Attachment"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="/mappers/member-mapper.xml"></mapper>
+ 		<mapper resource="/mappers/board-mapper.xml"></mapper>
+ 		<mapper resource="mappers/info-mapper.xml"></mapper>
+	</mappers>
+
+</configuration>

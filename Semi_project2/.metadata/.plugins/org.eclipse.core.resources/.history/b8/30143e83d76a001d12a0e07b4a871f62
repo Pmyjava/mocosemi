@@ -1,0 +1,62 @@
+package com.kh.moco.board.dao;
+
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.RowBounds;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+@Repository("bDAO")
+public class BoardDAO {
+
+	public int getListCount(SqlSessionTemplate sqlSession, int i) {
+		
+		return sqlSession.selectOne("boardMapper.getListCount",i);
+	}
+	public ArrayList<Board> selectBoardList(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardList", i, rowBounds);
+	}
+	
+	public int getListCountQNA(SqlSessionTemplate sqlSession, int i) {
+			
+		return sqlSession.selectOne("boardMapper.getListCountQNA",i);
+	}
+	public ArrayList<Board> selectBoardListQNA(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+	  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardListQNA", i, rowBounds);
+	}
+		
+		
+		
+	public int getListCountReview(SqlSessionTemplate sqlSession, int i) {
+			
+			return sqlSession.selectOne("boardMapper.getListCount",i);
+		}
+	public ArrayList<Board> selectBoardListReview(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+			int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+			RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+	  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardList", i, rowBounds);
+	}
+		
+	
+	
+	public int getListCountUnKnown(SqlSessionTemplate sqlSession, int i) {
+		
+		return sqlSession.selectOne("boardMapper.getListCountUnKnown",i);
+	}
+	public ArrayList<Board> selectBoardListUnKnown(SqlSessionTemplate sqlSession, PageInfo pi, int i) {
+		int offset = (pi.getCurrentPage()-1) * pi.getBoardLimit();
+		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
+  		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectBoardList", i, rowBounds);
+	}
+}

@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Nov 26 14:28:09 KST 2022
+org.eclipse.jst.jee.server\:/binary\:D\:\\dev\\apache-maven-3.8.6\\repository\\org\\springframework\\spring-web\\5.3.23\\spring-web-5.3.23.jar=D\:\\dev\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\moco_SemiProject\\WEB-INF\\lib\\spring-web-5.3.23.jar
+org.eclipse.jst.jee.server\:moco_SemiProject=D\:\\dev\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\moco_SemiProject

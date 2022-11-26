@@ -1,0 +1,24 @@
+package com.kh.moco.member;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+@SessionAttributes("loginUser")
+@Controller
+public class MemberController {
+	
+    @RequestMapping(value = "login.me", method = RequestMethod.GET)
+    public String loginView() {
+		//return "member/login";
+		return "login";
+	}
+    
+    @RequestMapping(value = "enroll.me", method = RequestMethod.GET)
+    public String enroll() {
+		//return "member/login";
+		return "enroll";
+	}
+    
+}

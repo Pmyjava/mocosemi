@@ -1,0 +1,13 @@
+package com.kh.moco.board.model.service;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Service;
+
+import com.kh.moco.board.model.service.dao.BoardDAO;
+
+@Service("bService")
+public class BoardServiceImpl implements BoardService{
+	private SqlSessionTemplate sqlSession;
+	
+	private BoardDAO bDAO;
+}

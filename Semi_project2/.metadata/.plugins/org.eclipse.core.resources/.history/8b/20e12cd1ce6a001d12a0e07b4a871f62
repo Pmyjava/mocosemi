@@ -1,0 +1,20 @@
+package com.kh.moco.board.model.service;
+
+import java.util.ArrayList;
+
+import com.kh.moco.board.model.vo.Board;
+import com.kh.moco.board.model.vo.PageInfo;
+
+public interface BoardService {
+
+	int getListCount(int i);
+
+	ArrayList<Board> selectBoardList(PageInfo pi, int i);
+	
+	ArrayList<Board> selectBoardList2(PageInfo pi, int i);
+	
+	ArrayList<Board> selectBoardList3(PageInfo pi, int i);
+	
+	ArrayList<Board> selectBoardList4(PageInfo pi, int i);
+	
+}

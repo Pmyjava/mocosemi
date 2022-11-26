@@ -1,0 +1,31 @@
+package com.kh.moco.member.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+
+@SessionAttributes("loginUser")
+@Controller
+public class MemberController {
+	
+	
+	// 1. 로그인 페이지 이동.
+    @RequestMapping(value = "loginView.me", method = RequestMethod.GET)
+    public String loginView() {
+		//return "member/login";
+		return "login";
+	}
+    
+    // 2. 회원가입 페이지 이동
+  	@RequestMapping("enrollView.me")
+  	public String enroll() {
+  		return "enroll";
+  	}
+  	
+  	
+    
+}

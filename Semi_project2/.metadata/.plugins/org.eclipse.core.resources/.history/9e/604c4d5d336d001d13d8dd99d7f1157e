@@ -1,0 +1,79 @@
+package com.kh.moco.info.model.service;
+
+import java.util.ArrayList;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kh.moco.attachment.model.vo.Attachment;
+import com.kh.moco.info.model.dao.InfoDAO;
+import com.kh.moco.info.model.vo.Infomation;
+import com.kh.moco.info.model.vo.PageInfo2;
+
+@Service("iService")
+
+public class InfoServiceImpl implements InfoService {
+	@Autowired
+	private InfoDAO iDAO;
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	@Override
+	public int getListCount() {
+		return iDAO.getListCount(sqlSession);
+	}
+	
+	@Override
+	public int insertInfo(Infomation info) {
+
+		return iDAO.insertInfo(info, sqlSession);
+	}
+
+	@Override
+	public int insertAttm(ArrayList<Attachment> list) {
+		return iDAO.insertAttm(sqlSession,list);
+	}
+
+	@Override
+	public ArrayList<Infomation> selectInfoList(int i,PageInfo2 pi) {
+		return iDAO.selectInfoList(sqlSession,pi,i);
+	}
+
+
+
+
+	@Override
+	public Infomation selectInfo(int infoId, boolean yn) {
+		int result =0;
+//		if(yn) {
+//			조회수 넣는 DAO 컬럼을 추가해야 하는 상황이 있어 상세조회 구현 후 컬럼 추가해서 넣기!!
+//			result=iDAO.addCount(sqlSession,infoId);
+//		}
+		Infomation info = iDAO.selectInfo(sqlSession,infoId);
+		return info;
+	
+	}
+
+	@Override
+	public ArrayList<Attachment> selectAttmListDetail(int infoId) {
+		return iDAO.selectAttmListDetail(sqlSession,infoId) ;
+	}
+
+	@Override
+	public Infomation selectInfoDetail(int infoId, boolean yn) {
+		return iDAO.selectInfoDetail(sqlSession,infoId,yn);
+	}
+
+	@Override
+	public ArrayList<Attachment> selectAttmList(int i) {
+		return iDAO.selectAttmList(sqlSession,i);
+	}
+
+	
+	
+
+	
+
+	
+}

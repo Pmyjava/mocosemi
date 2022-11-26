@@ -1,0 +1,12 @@
+package com.kh.moco.info;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+public class InfoController {
+	@RequestMapping(value = "infoList.do", method = RequestMethod.GET)
+    public String infoList() {
+		//return "member/login";
+		return "infoList";
+	}
+}

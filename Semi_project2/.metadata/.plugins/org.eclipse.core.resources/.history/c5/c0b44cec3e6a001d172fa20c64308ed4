@@ -1,0 +1,14 @@
+package com.kh.moco.board.dao;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository("bDAO")
+public class BoardDAO {
+
+	public int getListCount(SqlSessionTemplate sqlSession, int i) {
+		
+		return sqlSession.selectOne("boardMapper.getListCount",i);
+	}
+
+}

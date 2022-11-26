@@ -57,7 +57,7 @@ public class BoardController {
 		if(page != null) {
 			currentPage = page;
 		}
-		String boardCategory="qN";
+		String boardCategory="qNa";
 		
 		int listCount = bService.getListCount("qNa");
 		
